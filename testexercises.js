@@ -45,8 +45,13 @@ var animals = [
 	{name: 'Doc', species: 'bird'}
 ];
 
-const animalType = (item) => {
-	return animals.filter(item => animals === item.species);
-	};
 
-animalType('cat');
+var animalsType = function(item){
+
+	return animals.filter(function(el){
+		if(item === el.species || item === el.name)
+			return el;
+		})
+};
+
+animalsType('Maud');
