@@ -149,3 +149,34 @@ runningTotal + item.price * item.quantity, 0);
 const prettyPrint = (customerItem) => `Here is the total amount owed: $${customerItem}.00`;
 
 prettyPrint(customerBill('Mark Johnson'));
+
+
+
+//Using both .filter() and .reduce() methods:
+const customersList =
+{
+	'Eric Smith': [
+		{name: 'silk sweater', price: 200, quantity: 2},
+		{name: 'ties', price: 45, quantity: 3},
+		{name: 'sneakers', price: 35, quantity: 2},
+		{paymentDue: 'October 31, 2015'}
+	],
+	'Liz Johnson': [
+		{name: 'blow dryer', price: 180, quantity: 1},
+		{name: 'silk blouse', price: 120, quantity: 3},
+		{name: 'purse', price: 300, quantity: 1},
+		{paymentDue: 'November 3, 2011'}
+	],
+	'Andrew Kane': [
+		{name: 'dress shirt', price: 65, quantity: 4},
+		{name: 'ties', price: 45, quantity: 2},
+		{name: 'sneakers', price: 40, quantity: 3},
+		{paymentDue: 'January 30, 2011'}
+	],
+	'Sally Howard': [
+		{name: 'silk blouse', price: 80, quantity: 3},
+		{name: 'dress', price: 135, quantity: 1},
+		{name: 'purse', price: 300, quantity: 2},
+		{paymentDue: 'March 31, 2015'}
+	],
+};
