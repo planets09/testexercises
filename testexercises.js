@@ -152,31 +152,87 @@ prettyPrint(customerBill('Mark Johnson'));
 
 
 
+
 //Using both .filter() and .reduce() methods:
-const customersList =
-{
-	'Eric Smith': [
+const customersList = {
+	'Eric Smith': {
+		products: [
 		{name: 'silk sweater', price: 200, quantity: 2},
 		{name: 'ties', price: 45, quantity: 3},
-		{name: 'sneakers', price: 35, quantity: 2},
-		{paymentDue: 'October 31, 2015'}
-	],
-	'Liz Johnson': [
+		{name: 'sneakers', price: 35, quantity: 2}
+		],
+		paymentDue: 'October 31, 2015'
+	},
+	'Liz Johnson': {
+		products: [
 		{name: 'blow dryer', price: 180, quantity: 1},
 		{name: 'silk blouse', price: 120, quantity: 3},
-		{name: 'purse', price: 300, quantity: 1},
-		{paymentDue: 'November 3, 2011'}
-	],
-	'Andrew Kane': [
+		{name: 'purse', price: 300, quantity: 1}
+		],
+		paymentDue: 'November 3, 2011'
+	},
+	'Andrew Kane': {
+		products: [
 		{name: 'dress shirt', price: 65, quantity: 4},
 		{name: 'ties', price: 45, quantity: 2},
-		{name: 'sneakers', price: 40, quantity: 3},
-		{paymentDue: 'January 30, 2011'}
-	],
-	'Sally Howard': [
+		{name: 'sneakers', price: 40, quantity: 3}
+		],
+		paymentDue: 'January 30, 2011'
+	},
+	'Sally Howard': {
+		products: [
 		{name: 'silk blouse', price: 80, quantity: 3},
 		{name: 'dress', price: 135, quantity: 1},
-		{name: 'purse', price: 300, quantity: 2},
-		{paymentDue: 'March 31, 2015'}
-	],
+		{name: 'purse', price: 300, quantity: 2}
+		],
+		paymentDue: 'March 31, 2015'
+	}
 };
+
+
+// Breakdown customer and payment due. Maybe use .filter() method?
+// Next, breakdown total customer bill. Maybe use .reduce() method?
+// Last, combine the output of customer, payment due and total amount as final output.
+
+
+// Using ES5 version:
+
+var customerName = 'Sally Howard';
+var customerPaymentDue = customersList[customerName].paymentDue;
+
+
+
+var customerInvoice = function(customerName){
+	return customersList[customerName].products.reduce((totalAmt, productItem) => {
+		return totalAmt + productItem.price * productItem.quantity;
+	}, 0)
+}
+customerInvoice('Andrew Kane');
+
+
+
+const filter200 = (customerName) => customersList[customerName].products;
+
+
+var customerName = 'Sally Howard';
+const array = customersList[customerName].products;
+const customerInvoice = (array) => array.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+
+const getInvoice = (customerName) => customerInvoice(customersList[customerName].products);
+getInvoice('Andrew Kane');
+
+
+
+//Notes: the new keyword and this keyword:  The new keyword is used with function to construct new things
+
+//constructor function: creates an empty object & the new object is bound to 'this' keyword. 
+//The function runs; if the function does not return a value, then the new object is returned.
+
+function Car(make, model, year){
+	this.make = make;
+	this.model = model;
+	this.year = year;
+}
+const car = new Car('HonDA', 'CIVIC', 2001);
+
