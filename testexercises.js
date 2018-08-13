@@ -1,3 +1,9 @@
+// NOTES:
+// Higher-Order Functions in JavaScript. One of the characteristics of JavaScript that makes 
+// it well-suited for functional programming is the fact that it can accept higher-order functions. 
+// A higher-order function is a function that can take another function as an argument, or 
+// that returns a function as a result.
+
 var students = [
 	{
 		name: 'Evan',
@@ -113,9 +119,9 @@ console.log(carType);
 
 var orders = [
 	{amount: 250},
-	{amount: 100},
+	{amount: 10},
 	{amount: 300},
-	{amount: 725},
+	{amount: 72},
 	{amount: 65}
 ];
 
@@ -138,7 +144,7 @@ const customersGroup =
 	'Sally Howard': [
 		{name: 'blow dryer', price: 180, quantity: 1},
 		{name: 'pot', price: 55, quantity: 3},
-		{name: 'frying pan', price: 92, quantity: 1}
+		{name: 'frying pan', price: 91, quantity: 1}
 	]
 };
 
@@ -205,7 +211,7 @@ var customerPaymentDue = customersList[customerName].paymentDue;
 var customerInvoice = function(customerName){
 	return customersList[customerName].products.reduce((totalAmt, productItem) => {
 		return totalAmt + productItem.price * productItem.quantity;
-	}, 0)
+	}, 0);
 }
 customerInvoice('Andrew Kane');
 
@@ -234,5 +240,6 @@ function Car(make, model, year){
 	this.model = model;
 	this.year = year;
 }
+// Using new keyword: creates a new object/binding.
 const car = new Car('HonDA', 'CIVIC', 2001);
 
