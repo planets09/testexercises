@@ -59,7 +59,9 @@ var animalsType = function(item){
 
 animalsType('dog');
 
-// second optional answer:
+// Second optional answer: ES06 version
+
+// Syntax for .filter() method:  array.filter(function(currentValue, index, arr), thisValue)
 const arraySearchBySpecies = (array, type) => array.filter(item => item.species === type);
 const arraySearchByName = (array, type) => array.filter(item => item.name === type);
 
@@ -91,6 +93,8 @@ var carType = cars.map(function(item){
 	return 'Here is the ' + item.model + ' and the year is ' + item.year + 
 	' and last, but not least, the color is ' + item.color + '.';
 });
+console.log(carType);
+
 
 // ES06:
 const vehiclesOfColor = (color) => cars.filter(car => car.color === color);
