@@ -169,7 +169,8 @@ const customersList = {
 		products: [
 		{name: 'silk sweater', price: 200, quantity: 2},
 		{name: 'ties', price: 45, quantity: 3},
-		{name: 'sneakers', price: 35, quantity: 2}
+		{name: 'sneakers', price: 35, quantity: 2},
+		{name: 'fedora', price: 25, quantity: 1}
 		],
 		paymentDue: 'October 31, 2015'
 	},
@@ -200,8 +201,8 @@ const customersList = {
 };
 
 
-// Breakdown customer and payment due. Maybe use .filter() method?
-// Next, breakdown total customer bill. Maybe use .reduce() method?
+// Breakdown customer and payment due. Maybe use .filter() method
+// Next, breakdown total customer bill. Maybe use .reduce() method
 // Last, combine the output of customer, payment due and total amount as final output.
 
 
